@@ -3,29 +3,35 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		62B6AD52261A9EB7002D502E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B6AD51261A9EB7002D502E /* AppDelegate.swift */; };
 		62B6AD54261A9EB7002D502E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B6AD53261A9EB7002D502E /* SceneDelegate.swift */; };
-		62B6AD56261A9EB7002D502E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B6AD55261A9EB7002D502E /* ViewController.swift */; };
+		62B6AD56261A9EB7002D502E /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B6AD55261A9EB7002D502E /* MainVC.swift */; };
 		62B6AD59261A9EB7002D502E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62B6AD57261A9EB7002D502E /* Main.storyboard */; };
 		62B6AD5C261A9EB7002D502E /* fine_dust.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 62B6AD5A261A9EB7002D502E /* fine_dust.xcdatamodeld */; };
 		62B6AD5E261A9EB9002D502E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62B6AD5D261A9EB9002D502E /* Assets.xcassets */; };
 		62B6AD61261A9EB9002D502E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62B6AD5F261A9EB9002D502E /* LaunchScreen.storyboard */; };
+		62B6AD78261B1D2E002D502E /* loadingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B6AD77261B1D2E002D502E /* loadingVC.swift */; };
+		C6D46D44443004E435C327C7 /* Pods_fine_dust.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80EA10B78AE0E4EF0EC3C78A /* Pods_fine_dust.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		62B6AD4E261A9EB7002D502E /* fine-dust.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fine-dust.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		62B6AD51261A9EB7002D502E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		62B6AD53261A9EB7002D502E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		62B6AD55261A9EB7002D502E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		62B6AD55261A9EB7002D502E /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		62B6AD58261A9EB7002D502E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		62B6AD5B261A9EB7002D502E /* fine_dust.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = fine_dust.xcdatamodel; sourceTree = "<group>"; };
 		62B6AD5D261A9EB9002D502E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		62B6AD60261A9EB9002D502E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		62B6AD62261A9EB9002D502E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		62B6AD77261B1D2E002D502E /* loadingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loadingVC.swift; sourceTree = "<group>"; };
+		80EA10B78AE0E4EF0EC3C78A /* Pods_fine_dust.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fine_dust.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA2F0BC147FFCDBAAAF57AFD /* Pods-fine-dust.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fine-dust.debug.xcconfig"; path = "Target Support Files/Pods-fine-dust/Pods-fine-dust.debug.xcconfig"; sourceTree = "<group>"; };
+		D429F05D396214E146D0EF27 /* Pods-fine-dust.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fine-dust.release.xcconfig"; path = "Target Support Files/Pods-fine-dust/Pods-fine-dust.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +39,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6D46D44443004E435C327C7 /* Pods_fine_dust.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		26F64F9E22138A6EA9053481 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				80EA10B78AE0E4EF0EC3C78A /* Pods_fine_dust.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		62B6AD45261A9EB7002D502E = {
 			isa = PBXGroup;
 			children = (
 				62B6AD50261A9EB7002D502E /* fine-dust */,
 				62B6AD4F261A9EB7002D502E /* Products */,
+				A68A2DCC548974FE3ECC2878 /* Pods */,
+				26F64F9E22138A6EA9053481 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,7 +77,8 @@
 			children = (
 				62B6AD51261A9EB7002D502E /* AppDelegate.swift */,
 				62B6AD53261A9EB7002D502E /* SceneDelegate.swift */,
-				62B6AD55261A9EB7002D502E /* ViewController.swift */,
+				62B6AD77261B1D2E002D502E /* loadingVC.swift */,
+				62B6AD55261A9EB7002D502E /* MainVC.swift */,
 				62B6AD57261A9EB7002D502E /* Main.storyboard */,
 				62B6AD5D261A9EB9002D502E /* Assets.xcassets */,
 				62B6AD5F261A9EB9002D502E /* LaunchScreen.storyboard */,
@@ -70,6 +88,15 @@
 			path = "fine-dust";
 			sourceTree = "<group>";
 		};
+		A68A2DCC548974FE3ECC2878 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CA2F0BC147FFCDBAAAF57AFD /* Pods-fine-dust.debug.xcconfig */,
+				D429F05D396214E146D0EF27 /* Pods-fine-dust.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,9 +104,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 62B6AD65261A9EB9002D502E /* Build configuration list for PBXNativeTarget "fine-dust" */;
 			buildPhases = (
+				70F65F4B88B1B27498E2C2C1 /* [CP] Check Pods Manifest.lock */,
 				62B6AD4A261A9EB7002D502E /* Sources */,
 				62B6AD4B261A9EB7002D502E /* Frameworks */,
 				62B6AD4C261A9EB7002D502E /* Resources */,
+				E28CD6D810A92CF5CA638DE2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -135,13 +164,56 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		70F65F4B88B1B27498E2C2C1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-fine-dust-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E28CD6D810A92CF5CA638DE2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-fine-dust/Pods-fine-dust-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-fine-dust/Pods-fine-dust-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-fine-dust/Pods-fine-dust-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		62B6AD4A261A9EB7002D502E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62B6AD56261A9EB7002D502E /* ViewController.swift in Sources */,
+				62B6AD56261A9EB7002D502E /* MainVC.swift in Sources */,
 				62B6AD52261A9EB7002D502E /* AppDelegate.swift in Sources */,
+				62B6AD78261B1D2E002D502E /* loadingVC.swift in Sources */,
 				62B6AD54261A9EB7002D502E /* SceneDelegate.swift in Sources */,
 				62B6AD5C261A9EB7002D502E /* fine_dust.xcdatamodeld in Sources */,
 			);
@@ -287,6 +359,7 @@
 		};
 		62B6AD66261A9EB9002D502E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA2F0BC147FFCDBAAAF57AFD /* Pods-fine-dust.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -306,6 +379,7 @@
 		};
 		62B6AD67261A9EB9002D502E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D429F05D396214E146D0EF27 /* Pods-fine-dust.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
