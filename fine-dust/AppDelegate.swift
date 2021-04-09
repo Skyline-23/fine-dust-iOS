@@ -9,13 +9,7 @@ import UIKit
 import CoreData
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
-    // 정보를 담을 struct 설정
-    struct userLoaction {
-        var latitude: Double!
-        var longitude: Double!
-    }
+class AppDelegate: UIResponder, UIApplicationDelegate {    
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {

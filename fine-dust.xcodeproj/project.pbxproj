@@ -15,6 +15,7 @@
 		62B6AD5E261A9EB9002D502E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62B6AD5D261A9EB9002D502E /* Assets.xcassets */; };
 		62B6AD61261A9EB9002D502E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62B6AD5F261A9EB9002D502E /* LaunchScreen.storyboard */; };
 		62B6AD78261B1D2E002D502E /* loadingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B6AD77261B1D2E002D502E /* loadingVC.swift */; };
+		62B6AD7E261C1FAF002D502E /* locationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B6AD7D261C1FAF002D502E /* locationModel.swift */; };
 		C6D46D44443004E435C327C7 /* Pods_fine_dust.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80EA10B78AE0E4EF0EC3C78A /* Pods_fine_dust.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		62B6AD60261A9EB9002D502E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		62B6AD62261A9EB9002D502E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		62B6AD77261B1D2E002D502E /* loadingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loadingVC.swift; sourceTree = "<group>"; };
+		62B6AD7D261C1FAF002D502E /* locationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = locationModel.swift; sourceTree = "<group>"; };
 		80EA10B78AE0E4EF0EC3C78A /* Pods_fine_dust.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fine_dust.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA2F0BC147FFCDBAAAF57AFD /* Pods-fine-dust.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fine-dust.debug.xcconfig"; path = "Target Support Files/Pods-fine-dust/Pods-fine-dust.debug.xcconfig"; sourceTree = "<group>"; };
 		D429F05D396214E146D0EF27 /* Pods-fine-dust.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fine-dust.release.xcconfig"; path = "Target Support Files/Pods-fine-dust/Pods-fine-dust.release.xcconfig"; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 			children = (
 				62B6AD51261A9EB7002D502E /* AppDelegate.swift */,
 				62B6AD53261A9EB7002D502E /* SceneDelegate.swift */,
+				62B6AD7D261C1FAF002D502E /* locationModel.swift */,
 				62B6AD77261B1D2E002D502E /* loadingVC.swift */,
 				62B6AD55261A9EB7002D502E /* MainVC.swift */,
 				62B6AD57261A9EB7002D502E /* Main.storyboard */,
@@ -211,6 +214,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62B6AD7E261C1FAF002D502E /* locationModel.swift in Sources */,
 				62B6AD56261A9EB7002D502E /* MainVC.swift in Sources */,
 				62B6AD52261A9EB7002D502E /* AppDelegate.swift in Sources */,
 				62B6AD78261B1D2E002D502E /* loadingVC.swift in Sources */,
