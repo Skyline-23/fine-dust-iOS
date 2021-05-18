@@ -15,10 +15,13 @@ import SwiftyJSON
 
 class loadingVC: UIViewController, CLLocationManagerDelegate {
     
+    let key = keys()
+    
     // lazy로 선언하여 메모리 관리
     lazy var locationManager = CLLocationManager().then {
-        // 배터리에 따른 위치 최적화
-        $0.desiredAccuracy = kCLLocationAccuracyBest
+        // 10미터 이내의 정확도로 설정을 하여 배터리 관리 최적화
+        $0.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        // 거리 위치 변화를 감지하지 않음
         $0.distanceFilter = kCLHeadingFilterNone
         // 권한을 요청
         $0.requestWhenInUseAuthorization()
@@ -37,9 +40,9 @@ class loadingVC: UIViewController, CLLocationManagerDelegate {
         
         locationManager.startUpdatingLocation()
         locationManager.delegate = self
-        
     }
     
+    // 위치 정보가 업데이트 되면 실행되도록 delegate 함수 사용
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         locationManager.stopUpdatingLocation()
         if count == 0 {
@@ -52,7 +55,6 @@ class loadingVC: UIViewController, CLLocationManagerDelegate {
                             getfinedust(url: "http://apis.data.go.kr/B552584/ArpltnInforInqireSvc/getMsrstnAcctoRltmMesureDnsty", stationName: stationName) { pmvalue, dataTime in
                                 print(pmvalue)
                                 print(dataTime)
-                                print("present")
                                 presentView()
                             }
                         }
@@ -65,6 +67,7 @@ class loadingVC: UIViewController, CLLocationManagerDelegate {
         }
     }
     
+    // 뷰 전환하기
     func presentView() {
         if let menuScreen = self.storyboard?.instantiateViewController(withIdentifier: "Main") {
             menuScreen.modalPresentationStyle = .fullScreen
@@ -78,9 +81,9 @@ class loadingVC: UIViewController, CLLocationManagerDelegate {
     func getLocation(location: CLLocation, handler: @escaping(userLocation) -> Void) {
         //위도 경도 가져오기
         var info = userLocation()
-        let coor = locationManager.location?.coordinate
-        info.latitude = coor?.latitude
-        info.longitude = coor?.longitude
+        let coord = locationManager.location?.coordinate
+        info.latitude = coord?.latitude
+        info.longitude = coord?.longitude
         let geoCoder: CLGeocoder = CLGeocoder()
         let local: Locale = Locale(identifier: "Ko-kr") // Korea
         geoCoder.reverseGeocodeLocation(location, preferredLocale: local) { place,error  in
@@ -92,9 +95,10 @@ class loadingVC: UIViewController, CLLocationManagerDelegate {
         }
     }
     
+    // TM좌표로 변환
     func TM(url: String, longitude: Double, latitude: Double, handler: @escaping(userLocation) -> Void) {
         var result = userLocation()
-        let headers:HTTPHeaders = ["Authorization" : "KakaoAK 41b8e7df68905f6788749d919520d22f"]
+        let headers:HTTPHeaders = ["Authorization" : key.kakaoKey]
         let parameters: Parameters = ["x" : longitude, "y" : latitude, "output_coord" : "TM"]
         let alamo = AF.request(url, method: .get,parameters: parameters, encoding: URLEncoding.queryString ,headers: headers)
         alamo.responseJSON() { response in
@@ -114,10 +118,10 @@ class loadingVC: UIViewController, CLLocationManagerDelegate {
         }
     }
     
-    
+    // 근처 측정소 받아오기
     func getNearbyMsrstn(url: String, tmX: Double, tmY: Double, handler: @escaping(String) -> Void) {
         let parameters: Parameters = [
-            "serviceKey" : "mUoz7fgLI+xTi0NVacA3owoO515glwvj8QBYiaVbmeFdu7oLFBk0quxN0jN2wjlMEPlOxKUepRtv2m8dJS9q8Q==",
+            "serviceKey" : key.airKoreaKey,
             "tmX" : tmX,
             "tmY" : tmY,
             "returnType" : "json"
@@ -140,9 +144,10 @@ class loadingVC: UIViewController, CLLocationManagerDelegate {
         }
     }
     
+    // 미세먼지 값 받아오기
     func getfinedust(url: String, stationName: String, handler: @escaping(String, String) -> Void) {
         let parameters: Parameters = [
-            "serviceKey" : "mUoz7fgLI+xTi0NVacA3owoO515glwvj8QBYiaVbmeFdu7oLFBk0quxN0jN2wjlMEPlOxKUepRtv2m8dJS9q8Q==",
+            "serviceKey" : key.airKoreaKey,
             "stationName" : stationName,
             "dataTerm" : "DAILY",
             "informCode" : "PM10",

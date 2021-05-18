@@ -7,7 +7,8 @@ target 'fine-dust' do
   pod 'Alamofire'
   pod 'SwiftyJSON'
   pod 'Then'
-  pod 'RealmSwift'
+  pod 'RxSwift'
+  pod 'RxCocoa'
   
   # Pods for fine-dust
 

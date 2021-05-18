@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6291F6B82653A1340058CFEC /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6291F6B72653A1340058CFEC /* Keys.swift */; };
 		62B6AD52261A9EB7002D502E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B6AD51261A9EB7002D502E /* AppDelegate.swift */; };
 		62B6AD54261A9EB7002D502E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B6AD53261A9EB7002D502E /* SceneDelegate.swift */; };
 		62B6AD56261A9EB7002D502E /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B6AD55261A9EB7002D502E /* MainVC.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6291F6B72653A1340058CFEC /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		62B6AD4E261A9EB7002D502E /* fine-dust.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fine-dust.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		62B6AD51261A9EB7002D502E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		62B6AD53261A9EB7002D502E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				62B6AD51261A9EB7002D502E /* AppDelegate.swift */,
 				62B6AD53261A9EB7002D502E /* SceneDelegate.swift */,
 				62B6AD7D261C1FAF002D502E /* locationModel.swift */,
+				6291F6B72653A1340058CFEC /* Keys.swift */,
 				62B6AD77261B1D2E002D502E /* loadingVC.swift */,
 				62B6AD55261A9EB7002D502E /* MainVC.swift */,
 				62B6AD57261A9EB7002D502E /* Main.storyboard */,
@@ -218,6 +221,7 @@
 				62B6AD56261A9EB7002D502E /* MainVC.swift in Sources */,
 				62B6AD52261A9EB7002D502E /* AppDelegate.swift in Sources */,
 				62B6AD78261B1D2E002D502E /* loadingVC.swift in Sources */,
+				6291F6B82653A1340058CFEC /* Keys.swift in Sources */,
 				62B6AD54261A9EB7002D502E /* SceneDelegate.swift in Sources */,
 				62B6AD5C261A9EB7002D502E /* fine_dust.xcdatamodeld in Sources */,
 			);
