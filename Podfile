@@ -9,7 +9,8 @@ target 'fine-dust' do
   pod 'Then'
   pod 'RxSwift'
   pod 'RxCocoa'
-    
+  pod 'RxCoreLocation'
+
   # Pods for fine-dust
 
 end

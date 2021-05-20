@@ -10,14 +10,17 @@ import CoreLocation
 
 import RxSwift
 import RxCocoa
+import RxCoreLocation
 import Then
 import Alamofire
 import SwiftyJSON
 
 class loadingVC: UIViewController, CLLocationManagerDelegate {
     
-    let key = keys()
-    let disposebag = DisposeBag()
+    let key: keys = keys()
+    let disposebag: DisposeBag = DisposeBag()
+    var info: userLocation = userLocation()
+    var cnt: UInt = 0
     
     // lazy로 선언하여 메모리 관리
     lazy var locationManager = CLLocationManager().then {
@@ -29,8 +32,6 @@ class loadingVC: UIViewController, CLLocationManagerDelegate {
         $0.requestWhenInUseAuthorization()
     }
     
-    var manager = CLLocationManager()
-    
     // 정보를 담을 struct 설정
     struct userLocation {
         var latitude: Double!
@@ -40,35 +41,47 @@ class loadingVC: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+        locationManager.startUpdatingLocation()
+        checkLocationAuth()
     }
     
-    private func bindUI() {
-        manager.rx
+    private func updateLocation() {
+        locationManager.rx
             .location
-            .subscribe(onNext: { location in
-                guard let location = location else { return }
-                print("")
+            .subscribe(onNext: {
+                self.locationManager.stopUpdatingLocation()
+                if self.cnt == 0 {
+                    self.cnt += 1
+                    guard let location = $0 else { return }
+                    print("latitude: \(location.coordinate.latitude) longitude: \(location.coordinate.longitude)")
+                    self.info.longitude = location.coordinate.longitude
+                    self.info.latitude = location.coordinate.latitude
+                }
             })
             .disposed(by: disposebag)
     }
     
+    func excute(task: () -> Void) {
+        task()
+    }
+    
     private func checkLocationAuth() {
-        manager.rx
-            .didChangeAutorization
-            .subscribe(onNext: {_, status in
-                switch status {
+        locationManager.rx
+            .didChangeAuthorization
+            .subscribe(onNext: {
+                switch $1 {
                 case .denied:
                     print("denied")
+                case .authorizedAlways, .authorizedWhenInUse:
+                    self.excute(task: self.updateLocation)
                 case .notDetermined:
                     print("not determined")
                 case .restricted:
                     print("restricted")
-                case .autorizedAlways, .autorizedWhenInUse:
-                    print("good")
+                @unknown default:
+                    break
                 }
-            })
-            .disposed(by: disposebag)
+            }).disposed(by: disposebag)
     }
     
     
